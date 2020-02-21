@@ -10,6 +10,14 @@ public class Player {
     // ***************
     // Fix this method
     public GameRule findBest(GameRule[] rules){
-        return rules[0];
+        int max = 0, chosenIndex = 0;
+        for (int i = 0; i<rules.length; i++) {
+            int ruleResult = rules[i].calculateResult(values);
+            if(ruleResult > max) {
+                max = ruleResult;
+                chosenIndex = i;
+            }
+        }
+        return rules[chosenIndex];
     }
 }
