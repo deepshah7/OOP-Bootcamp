@@ -17,7 +17,6 @@ public class CountingList extends MyStringList {
     @Override
     public void addAll(Collection<String> c) {
         super.addAll(c);
-        counter += c.size();
     }
 
     public int getCounter() {
