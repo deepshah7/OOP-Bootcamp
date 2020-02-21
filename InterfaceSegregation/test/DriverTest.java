@@ -11,7 +11,7 @@ public class DriverTest {
 
     @Test
     public void shouldDecreaseFuelWhenGoingForDrive() {
-        Car car = new Car(5);
+        DriverInterface car = new Car(5);
         Driver driver = new Driver(car);
 
         driver.drive();
@@ -21,7 +21,7 @@ public class DriverTest {
 
     @Test
     public void shouldDecreaseFuelBy5WhenGoingForLongDrive() {
-        Car car = new Car(7);
+        DriverInterface car = new Car(7);
         Driver driver = new Driver(car);
 
         driver.goForLongDrive();
@@ -31,7 +31,7 @@ public class DriverTest {
 
     @Test
     public void shouldThrowOutOfFuelIfDrivingOnEmpty() {
-        Car car = new Car(0);
+        DriverInterface car = new Car(0);
         Driver driver = new Driver(car);
 
         thrown.expect(OutOfFuelException.class);
@@ -40,7 +40,7 @@ public class DriverTest {
 
     @Test
     public void shouldThrowNotEnoughFuelIfGoingForLongDrivingWithoutEnough() {
-        Car car = new Car(3);
+        DriverInterface car = new Car(3);
         Driver driver = new Driver(car);
 
         thrown.expect(NotEnoughFuelException.class);

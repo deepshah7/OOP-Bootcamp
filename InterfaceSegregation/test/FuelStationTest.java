@@ -1,9 +1,7 @@
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.core.IsNot.not;
 
 public class FuelStationTest {
@@ -11,7 +9,7 @@ public class FuelStationTest {
     public void shouldFillUpFuel() {
         FuelStation station = new FuelStation();
 
-        Car car = new Car(3);
+        FuelStationInterface car = new Car(3);
         station.fillUp(car);
 
         assertThat(car.checkFuelLevel(), is(10));
@@ -21,7 +19,7 @@ public class FuelStationTest {
     public void shouldFillUpIfLow() {
         FuelStation station = new FuelStation();
 
-        Car car = new Car(3);
+        FuelStationInterface car = new Car(3);
         station.fillUpIfLow(car);
 
         assertThat(car.checkFuelLevel(), is(10));
@@ -31,7 +29,7 @@ public class FuelStationTest {
     public void shouldNotFillUpIfNotLow() {
         FuelStation station = new FuelStation();
 
-        Car car = new Car(7);
+        FuelStationInterface car = new Car(7);
         station.fillUpIfLow(car);
 
         assertThat(car.checkFuelLevel(), is(7));
