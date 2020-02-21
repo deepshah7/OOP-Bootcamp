@@ -5,18 +5,19 @@ import java.util.stream.Collectors;
 /**
  * This is a famous Java example by Joshua Bloch to highlight the pitfalls of inheritance
  */
-public class CountingList extends MyStringList {
+public class CountingList {
     private int counter = 0;
 
-    @Override
+    private MyStringList list = new MyStringList();
+
     public void add(String t) {
-        super.add(t);
+        list.add(t);
         counter ++;
     }
 
-    @Override
     public void addAll(Collection<String> c) {
-        super.addAll(c);
+        list.addAll(c);
+        counter += c.size();
     }
 
     public int getCounter() {
@@ -24,6 +25,6 @@ public class CountingList extends MyStringList {
     }
 
     public String toString() {
-        return String.format("Added %d elements: %s", counter, super.concatenateList(", "));
+        return String.format("Added %d elements: %s", counter, list.concatenateList(", "));
     }
 }
