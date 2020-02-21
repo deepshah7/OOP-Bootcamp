@@ -14,7 +14,7 @@ public class DriverTest {
 
     @Before
     public void setup() {
-        vehicle = new Helicopter();
+        vehicle = new Car();
         radio = new ExpensiveRadio();
     }
 
@@ -75,8 +75,12 @@ public class DriverTest {
     public void shouldTryToFlyWithTheVehicle(){
         Helicopter vehicle = new Helicopter();
         Driver driver = new Driver(radio, vehicle);
-        driver.speedUp();
 
-        assertThat(vehicle.getSpeed(), is(equalTo(9)));
+        try {
+            driver.speedUp();
+            assertThat("We should have never reached here!", false);
+        } catch (Exception e) {
+            assertThat("As expected exception is thrown!", true);
+        }
     }
 }
