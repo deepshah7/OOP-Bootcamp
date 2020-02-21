@@ -14,8 +14,8 @@ public class DriverTest {
 
     @Before
     public void setup() {
-        vehicle = new Car();
-        radio = new CheapRadio();
+        vehicle = new Helicopter();
+        radio = new ExpensiveRadio();
     }
 
     @Test
@@ -69,5 +69,14 @@ public class DriverTest {
         driver.talkingToPassenger();
 
         assertThat(radio.getVolume(), is(equalTo(9)));
+    }
+
+    @Test
+    public void shouldTryToFlyWithTheVehicle(){
+        Helicopter vehicle = new Helicopter();
+        Driver driver = new Driver(radio, vehicle);
+        driver.speedUp();
+
+        assertThat(vehicle.getSpeed(), is(equalTo(9)));
     }
 }
