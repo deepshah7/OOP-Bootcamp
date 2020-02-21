@@ -1,12 +1,13 @@
 public class Car {
     private int speed = 0;
+    protected int step = 1;
 
     public void accelerate() {
-        speed += 1;
+        speed += step;
     }
 
     public void decelerate() {
-        speed -= 1;
+        speed -= step;
     }
     
     public int getSpeed(){
