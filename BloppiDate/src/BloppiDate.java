@@ -18,10 +18,10 @@ public class BloppiDate {
     }
 
     public BloppiDate AddDays(int days) {
-        return new BloppiDate(year, month, day);
+        return new BloppiDate(year + (days / 30) / 12, month + (days / 30) % 12, day + days % 30);
     }
 
     public int DiffDays(BloppiDate other) {
-        return 0;
+        return (other.year - this.year)*360 + (other.month - this.month) * 30 + (other.day - this.day);
     }
 }
