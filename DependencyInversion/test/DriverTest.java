@@ -14,9 +14,9 @@ public class DriverTest {
 	
 	@Before
 	public void setup(){
-//		car = ???
-//		radio = ???
-		driver = new Driver();
+		car = new Car();
+		radio = new Radio();
+		driver = new Driver(car, radio);
 	}
 	
     @Test
