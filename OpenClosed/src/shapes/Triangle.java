@@ -10,12 +10,9 @@ public class Triangle extends Shape {
 		this.base = base;
 		this.height = height;
 	}
-	
-	public int getBase(){
-		return base;
-	}
-	
-	public int getHeight(){
-		return height;
+
+	@Override
+	public double calculateArea() {
+		return base * height / 2.0f;
 	}
 }

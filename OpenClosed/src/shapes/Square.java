@@ -9,7 +9,8 @@ public class Square extends Shape {
 		this.sideLength = sideLength;
 	}
 	
-	public int getSideLength(){
-		return sideLength;
+	@Override
+	public double calculateArea() {
+		return Math.pow(sideLength, 2);
 	}
 }

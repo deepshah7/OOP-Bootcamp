@@ -10,12 +10,9 @@ public class Rectangle extends Shape {
 		this.width = width;
 		this.height = height;
 	}
-	
-	public int getWidth(){
-		return width;
-	}
-	
-	public int getHeight(){
-		return height;
+
+	@Override
+	public double calculateArea() {
+		return height * width;
 	}
 }

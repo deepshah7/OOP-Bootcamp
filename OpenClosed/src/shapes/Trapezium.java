@@ -12,16 +12,9 @@ public class Trapezium extends Shape {
 		this.top = top;
 		this.height = height;
 	}
-	
-	public int getBase(){
-		return base;
-	}
-	
-	public int getTop(){
-		return top;
-	}
-	
-	public int getHeight(){
-		return height;
+
+	@Override
+	public double calculateArea() {
+		return ((base + top) / 2.0f) * height;
 	}
 }
